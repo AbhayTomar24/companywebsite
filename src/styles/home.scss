@@ -1,0 +1,199 @@
+@import "./colors.scss";
+
+.Home {
+ // border: 1px solid pink;
+ width: 100%;
+ height: 100vh;
+ // 100vh means 100% of the viewport height. So, if you set an element's height to 100vh, it will take up the entire height of the viewport, regardless of the size of the screen.
+ background-color: $second;
+ color: aliceblue;
+
+ > main {
+  // border: 1px solid rgb(217, 0, 0);
+  position: absolute;
+  text-transform: uppercase;
+  display: flex;
+  // This means the flex items inside the container will be laid out in a single column,
+  // stacking vertically from top to bottom.
+  // main axis is vertical.
+  flex-direction: column;
+  /*
+ In a flex container, there are two axes: the main axis and the cross axis. The direction of these axes depends on the flex-direction property.
+ Main Axis: The main axis is determined by the flex-direction property. In your case, since you have flex-direction: column;, the main axis runs from top to bottom.
+ Cross Axis: The cross axis is perpendicular to the main axis. In this case, with flex-direction: column;, the cross axis runs horizontally from left to right.
+ Now, when you set align-items: flex-end;, it aligns the flex items along the cross axis to the end of the container. Since the cross axis is horizontal (left to right), setting align-items: flex-end; will align the items to the right side of the container, not the bottom.
+ So, to correct my previous response, with flex-direction: column; and align-items: flex-end;, the items will be stacked vertically, and their alignment will be adjusted so that they are pushed to the right side of the container along the horizontal cross axis.
+ // align items is used for cross-axis and justify content is for main axis
+  */
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  // It's essential to note that the parent element must have a defined height for height: 100% to work as expected.
+  padding: 2rem;
+  justify-content: center;
+ }
+
+ h1 {
+  font: 400 6rem $text1;
+  color: white;
+ }
+ p {
+  font: 900 1rem $text1;
+  color: white;
+ }
+
+ &::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: no-repeat center/cover url("../assets/1.png");
+  /*
+  content: "";: This line sets the content of the pseudo-element to an empty string. This property is required for pseudo-elements, even if you're not adding any visible content.
+width: 100%; height: 100%;: These lines set the width and height of the pseudo-element to 100% of its parent element's width and height.
+position: absolute;: This line positions the pseudo-element absolutely relative to its nearest positioned ancestor (usually the nearest parent element with a position other than static). Absolute positioning allows you to place the pseudo-element precisely where you want it within its containing block.
+background: no-repeat center/auto url("../assets/1.png");: This line sets the background of the pseudo-element. It specifies the following:
+no-repeat: The background image will not repeat.
+center/auto: The background image is centered horizontally and the background size is automatically adjusted to maintain its aspect ratio. The auto value for background-size maintains the aspect ratio of the background image.
+url("../assets/1.png"): Specifies the URL of the background image. The image path is relative to the CSS file, and it's assumed to be located in a folder named "assets" and named "1.png".
+  */
+  filter: blur(1px);
+  border-radius: 0 0 200px 200px;
+ }
+}
+
+.Home2 {
+ // border: 1px solid greenyellow;
+ width: 100%;
+ height: 100vh;
+ background-color: $second;
+ padding: 500px 0px; //vertical and then horizontal
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: -200px; //beacuse of this-->border-radius: 0 0 200px 200px;
+ > img {
+  width: 30%;
+  animation: imgUP 0.7s linear infinite alternate;
+ }
+ > div {
+  // border: 1px solid white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  height: 100vh;
+ }
+ p {
+  color: $first;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  font: 100 1.2rem $text2;
+ }
+}
+
+.Home3 {
+ width: 100%;
+ height: 100vh;
+ background-color: $second;
+ margin-top: -200px;
+ display: flex;
+
+ > div {
+  width: 70%;
+  height: 80vh;
+  background-color: $first;
+  border-radius: 0 200px 200px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  > h1 {
+   text-transform: uppercase;
+   border-bottom: 2px solid $dark;
+   padding: 0.5rem;
+   width: 15rem;
+   color: $dark;
+  }
+
+  > p {
+   padding: 5rem;
+   letter-spacing: 1px;
+   word-spacing: 5px;
+   line-height: 170%;
+   font: italic 100 1.2rem $text2;
+  }
+ }
+}
+
+.Home4 {
+ width: 100%;
+ height: 100vh;
+ background-color: $second;
+ display: flex;
+ justify-content: flex-end;
+
+ > div {
+  background-color: $third;
+  border-radius: 200px 0 0 200px;
+  width: 70%;
+  height: 70vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > h1 {
+   color: $first;
+   text-transform: uppercase;
+   width: 140px;
+   border-bottom: 2px solid $first;
+   padding: 0.5rem;
+  }
+
+  > article {
+   display: flex;
+   margin: 2rem 0;
+   flex-wrap: wrap;
+   justify-content: center;
+   > div {
+    animation: imgUP 0.7s linear infinite alternate;
+    margin: 1rem;
+    height: 10rem;
+    width: 10rem;
+    background-color: $first;
+    border-radius: 50%;
+    // Setting border-radius: 50%; in CSS makes the corners of the element perfectly rounded, creating a circle if the element is a square or an ellipse if it's a rectangle.
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $dark;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+     filter: invert(1);
+     // filter: invert(1);: This CSS property applies a filter effect to the element, in this case, invert(1) which inverts the colors of the element. When the element is hovered over, its colors will be inverted, creating a negative effect.
+    }
+
+    svg {
+     font-size: 4rem;
+    }
+    p {
+     font: 900 1.2rem $text2;
+    }
+   }
+  }
+ }
+}
+
+@keyframes imgUP {
+ to {
+  transform: translateY(-10px);
+ }
+}

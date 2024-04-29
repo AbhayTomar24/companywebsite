@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+ margin:0%;
+ padding:0%;
+ font-family: "Roboto",sans-serif;
+ box-sizing: border-box;
+ /* 
+ .box {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 2px solid black;
+}
+With box-sizing: border-box;, the total width of the .box element will be calculated as follows:
+Width: 200px (specified width) + 2 * 20px (padding) + 2 * 2px (border) = 244px
+Height: 100px (specified height) + 2 * 20px (padding) + 2 * 2px (border) = 144px
+Without box-sizing: border-box;, 
+the padding and border would be added to the specified width and height, potentially causing the element to overflow its container.
+  */
+ 
+ text-decoration: none;
+ scroll-behavior: smooth;
+}
+
+

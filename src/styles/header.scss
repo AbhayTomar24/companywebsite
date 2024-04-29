@@ -1,0 +1,67 @@
+@import "colors";
+
+nav {
+//  border: 2px solid black;
+ opacity: 80%;
+ width: 100%;
+ padding: 1rem;
+ display: flex;
+ justify-content: space-between;
+ // This property is used to distribute the space between flex items along the main axis of the flex container.
+ // When you set justify-content: space-between;, it will place equal space between the flex items,
+ // pushing them to the start and end edges of the container. The first item will align to the start edge,
+ // the last item will align to the end edge, and any space between items will be evenly distribute
+ align-items: center;
+ /*This property is used to align flex items along the cross axis of the flex container. 
+  When you set align-items: center;, it will align the flex items vertically at the center of the container. 
+  This means that the items will be centered vertically within the container.
+  */
+ position: sticky;
+ // When you set position: sticky; on an element, it remains in its normal position (relative to the document flow)
+ // until it reaches a specified scroll position, at which point it becomes "sticky" and starts to stick to its containing block or viewport. Once
+ // the user scrolls past the specified scroll position, the element returns to its normal position in the document flow.
+ background-color: $first; //used a variable from colors.scss
+ top: 0%;
+ z-index: 10;
+ /*
+  These CSS properties are often used in conjunction with position: sticky; to control the behavior and stacking order of sticky elements.
+
+top: 0%;: This property specifies the distance between the top edge of the sticky element and its containing block or the viewport. 
+Setting top: 0%; means that the top edge of the sticky element will align with the top edge of its containing block or the viewport when it becomes sticky. 
+In other words, the element will stick to the very top of its container or the viewport.
+
+z-index: 10;: This property determines the stacking order of elements along the z-axis (the axis that comes out of the screen towards the viewer). 
+The higher the z-index value, the closer an element is to the viewer and the higher it will be stacked above other elements with lower z-index values.
+ By setting z-index: 10;, you're ensuring that the sticky element will appear above other elements on the page that have lower z-index values. 
+This is particularly useful if there are overlapping elements, and you want the sticky element to be visually prominent.
+
+Together, top: 0%; ensures that the sticky element sticks to the very top of its container or the viewport, 
+and z-index: 10; ensures that it appears above other elements on the page. 
+These properties are commonly used to create sticky headers or navigation bars that remain fixed at the top of the viewport while the user scrolls.
+  */
+ > h1 {
+  //> nav ke andar jo h1 hai usko chnage karne ke liye
+  // border: 1px solid black;
+  text-transform: uppercase;
+ }
+ > main {
+  // border: 1px solid black;
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  > a {
+   color: $dark;
+   margin: 1rem;
+   /*
+   The CSS property margin is used to create space around an element, 
+   separating it from other elements. When you set margin: 1rem;,
+    it applies a margin of 1 rem on all four sides of the element.
+   */
+  &:hover{
+   color: $third;
+  }
+  
+  }
+ }
+}
+
